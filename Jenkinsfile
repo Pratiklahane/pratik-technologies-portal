@@ -18,5 +18,14 @@ pipeline {
                 '''
             }
         }
+
+        stage('Docker Build') {
+            steps {
+                sh '''
+                    docker build -t pratik-portal:latest .
+                    docker images
+                '''
+            }
+        }
     }
 }
