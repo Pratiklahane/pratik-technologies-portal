@@ -1,5 +1,10 @@
+
 pipeline {
     agent any
+
+    environment {
+        DOCKER_IMAGE = 'pratiklahane/pratik-technologies-portal'
+    }
 
     stages {
         stage('Checkout') {
@@ -22,9 +27,27 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh '''
-                    docker build -t pratik-portal:latest .
-                    docker images
+                    docker build -t ${DOCKER_IMAGE}:latest .
                 '''
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-credentials',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_TOKEN'
+                )]) {
+                    sh '''
+                        echo "$DOCKER_TOKEN" | docker login \
+                            -u "$DOCKER_USER" --password-stdin
+
+                        docker push ${DOCKER_IMAGE}:latest
+
+                        docker logout
+                    '''
+                }
             }
         }
     }
