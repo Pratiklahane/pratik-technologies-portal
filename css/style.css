@@ -493,3 +493,123 @@ footer {
     }
 
 }
+/* CAREERS SECTION */
+
+.careers-vision {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-left: 5px solid #3478ed;
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 45px;
+}
+
+.careers-vision h2 {
+    color: #17243a;
+    margin-bottom: 18px;
+    font-size: 25px;
+}
+
+.careers-vision p:last-child {
+    color: #64748b;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.careers-heading {
+    margin-bottom: 25px;
+}
+
+.careers-heading h2 {
+    font-size: 27px;
+    color: #17243a;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.career-card {
+    background: white;
+    border: 1px solid #e1e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    transition: 0.2s;
+}
+
+.career-card:hover {
+    transform: translateY(-4px);
+    border-color: #3478ed;
+    box-shadow: 0 8px 20px rgba(15, 35, 65, 0.06);
+}
+
+.career-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    gap: 10px;
+}
+
+.career-icon {
+    color: #3478ed;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.job-status {
+    background: #eaf7ef;
+    color: #15803d;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.career-card h3 {
+    color: #17243a;
+    font-size: 23px;
+    margin-bottom: 14px;
+}
+
+.job-summary {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.career-card h4 {
+    color: #17243a;
+    margin: 22px 0 12px;
+    font-size: 15px;
+}
+
+.career-card ul {
+    padding-left: 20px;
+}
+
+.career-card li {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+/* CAREERS MOBILE RESPONSIVENESS */
+
+@media (max-width: 700px) {
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .careers-vision {
+        padding: 24px;
+    }
+
+    .career-card {
+        padding: 23px;
+    }
+}
